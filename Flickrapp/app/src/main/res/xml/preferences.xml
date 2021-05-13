@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory android:title="Settings">
+        <EditTextPreference
+            android:key="tag"
+            android:title="Image tag"
+            android:dialogTitle="Image tag"
+            android:defaultValue="trees"
+            app:useSimpleSummaryProvider="true" />
+        <SwitchPreferenceCompat
+            android:key="cache_switch"
+            android:title="Cache"
+            android:summary="Enable cache"
+            android:defaultValue="true" />
+        <SwitchPreferenceCompat
+            android:key="gps_switch"
+            android:title="GPS search"
+            android:summary="Enable GPS search"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+</PreferenceScreen>
