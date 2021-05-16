@@ -44,8 +44,6 @@ public class AsyncBitmapDownloader extends AsyncTask<String, Void, Bitmap> {
             } finally {
                 urlConnection.disconnect();
             }
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

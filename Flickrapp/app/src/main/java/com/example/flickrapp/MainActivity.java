@@ -82,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Log.i("TMM", "(Debug) Latitude:" + location.getLatitude() + " Longitude:" + location.getLongitude());
+            Toast.makeText(getApplicationContext(), "Latitude:" + location.getLatitude() +
+                    " Longitude:" + location.getLongitude(), Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -27,11 +27,7 @@ public class AsyncFlickrJSONDataForList extends AsyncTask<String, Void, JSONObje
 
     @Override
     protected JSONObject doInBackground(String... params) {
-        if (params[1].equals("GPS")) {
-            GPSflag = true;
-        } else {
-            GPSflag = false;
-        }
+        GPSflag = params[1].equals("GPS");
         URL url = null;
 
         try {

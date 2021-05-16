@@ -1,5 +1,6 @@
 package com.example.flickrapp;
 
+import android.annotation.SuppressLint;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -18,7 +19,8 @@ import java.nio.Buffer;
 
 public class AsyncFlickrJSONData extends AsyncTask<String, Void, JSONObject> {
     private JSONObject jsonObject;
-    private MainActivity activity;
+    @SuppressLint("StaticFieldLeak")
+    private final MainActivity activity;
 
     public AsyncFlickrJSONData(MainActivity activity) {
         this.activity = activity;
@@ -42,12 +44,8 @@ public class AsyncFlickrJSONData extends AsyncTask<String, Void, JSONObject> {
             } finally {
                 urlConnection.disconnect();
             }
-        } catch (MalformedURLException e) {
+        } catch (JSONException | IOException e) {
             e.printStackTrace();
-        } catch (JSONException jsonException) {
-            jsonException.printStackTrace();
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
         }
         return jsonObject;
     }
