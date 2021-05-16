@@ -21,13 +21,13 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class Authentification extends AppCompatActivity {
+public class Authentication extends AppCompatActivity {
     String res;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_authentification);
+        setContentView(R.layout.activity_authentication);
 
         // Get widgets
         Button login_button = (Button) findViewById(R.id.authentification_button);
@@ -63,6 +63,8 @@ public class Authentification extends AppCompatActivity {
                                     JSONObject jsonObject = new JSONObject(s);
                                     res = jsonObject.getString("authenticated");
 
+                                    Log.i("TMM", res);
+
                                     runOnUiThread(new Runnable() {
                                         @Override
                                         public void run() {
@@ -75,8 +77,6 @@ public class Authentification extends AppCompatActivity {
                             } finally {
                                 urlConnection.disconnect();
                             }
-                        } catch (MalformedURLException e) {
-                            e.printStackTrace();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }

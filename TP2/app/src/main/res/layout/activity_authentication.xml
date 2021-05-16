@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Authentification">
+    tools:context=".Authentication">
 
     <EditText
         android:id="@+id/login"
@@ -39,5 +39,5 @@
         android:ems="10"
         android:gravity="center_horizontal"
         android:inputType="textPersonName"
-        android:text="My Result here" />
+        android:text="My result here" />
 </LinearLayout>
